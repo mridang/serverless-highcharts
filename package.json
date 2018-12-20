@@ -22,6 +22,7 @@
   },
   "scripts": {
     "build": "prettier --config .prettierrc --write lib/** handler.js",
+    "serve": "serverless offline start",
     "test": "jest"
   },
   "author": "Mridang Agarwalla <mridang@nosto.com>",
