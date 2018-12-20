@@ -16,7 +16,7 @@
     "async": "^2.6.0",
     "highcharts-export-server": "^2.0.16",
     "object-assign-deep": "^0.3.1",
-    "serverless": "^1.26.1"
+    "serverless": "^1.35.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
