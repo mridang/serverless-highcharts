@@ -1,8 +1,6 @@
 var charter = require('./src/charts.js')
 var exporter = require('highcharts-export-server')
 
-exporter.initPool({ maxWorkers: 1 })
-
 module.exports.graph = async (event, context) => {
 
   try {
@@ -25,6 +23,7 @@ module.exports.graph = async (event, context) => {
   }
 
   try {
+    exporter.initPool({ maxWorkers: 1 })
     const chart = await charter.createChart(exporter, data);
     exporter.killPool();
 
