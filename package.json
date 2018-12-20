@@ -1,5 +1,5 @@
 {
-  "name": "restcharts",
+  "name": "serverless-highcharts",
   "version": "0.1.0",
   "description": "Generate charts easily through a simple REST API.",
   "engines": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/whatl3y/restcharts.git"
+    "url": "https://github.com/mridang/serverless-highcharts.git"
   },
   "devDependencies": {
     "serverless-offline": "^3.31.3"
@@ -17,6 +17,9 @@
     "highcharts-export-server": "^2.0.16",
     "object-assign-deep": "^0.3.1",
     "serverless": "^1.26.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mridang Agarwalla <mridang@nosto.com>",
   "license": "MIT"
