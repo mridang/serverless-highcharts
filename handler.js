@@ -1,4 +1,4 @@
-var charter = require('./src/charts.js')
+var charter = require('./lib/charts.js')
 var exporter = require('highcharts-export-server')
 
 module.exports.graph = async (event, context) => {
