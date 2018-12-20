@@ -1,0 +1,19 @@
+# ignore
+*.log
+*.rdb
+*.serverless
+*.DS_Store
+/certs
+/logs
+/files
+/node_modules
+/libs
+/bin
+/routes
+/tasks
+/public
+/config.js
+/LambdaHandlers.js
+serverless.params.json
+serverless.env.yml
+*.env
