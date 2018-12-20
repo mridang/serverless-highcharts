@@ -1,19 +1,32 @@
 var charter = require('./src/charts.js')
 var exporter = require('highcharts-export-server')
 
-exporter.initPool()
+exporter.initPool({ maxWorkers: 1 })
 
 module.exports.graph = async (event, context) => {
 
-  var data;
-  if (event.httpMethod === 'GET') {
-    data = JSON.parse(event.queryStringParameters.data);
-  } else {
-    data = JSON.parse(event.body);
+  try {
+    var data;
+    if (event.httpMethod === 'GET') {
+      data = JSON.parse(event.queryStringParameters.data);
+    } else {
+      data = JSON.parse(event.body);
+    }
+  } catch (err) {
+    console.error(err);
+    return {
+      headers: {
+        "Content-Type": 'text/plain'
+      },
+      statusCode: 400,
+      isBase64Encoded: false,
+      body: "Bad Request"
+    }
   }
 
   try {
     const chart = await charter.createChart(exporter, data);
+    exporter.killPool();
 
     return {
       headers: {
@@ -24,7 +37,7 @@ module.exports.graph = async (event, context) => {
       body: chart
     }
   } catch (err) {
-    // TODO: How to log the error
+    console.error(err);
     return {
       headers: {
         "Content-Type": 'text/plain'

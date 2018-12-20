@@ -10,6 +10,7 @@
     "url": "https://github.com/mridang/serverless-highcharts.git"
   },
   "devDependencies": {
+    "jest": "^23.6.0",
     "serverless-offline": "^3.31.3"
   },
   "dependencies": {
@@ -19,7 +20,7 @@
     "serverless": "^1.35.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Mridang Agarwalla <mridang@nosto.com>",
   "license": "MIT"
