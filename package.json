@@ -1,30 +1,36 @@
 {
   "name": "serverless-highcharts",
   "version": "0.1.0",
-  "description": "Generate charts easily through a simple REST API.",
+  "description": "Highcharts service running on the Serverless framework",
   "engines": {
     "node": "8.10.0"
   },
+  "main": "handler.js",
+  "scripts": {
+    "build": "prettier --config .prettierrc --write lib/** handler.js",
+    "serve": "serverless offline start",
+    "deploy": "sls deploy -v",
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mridang/serverless-highcharts.git"
+    "url": "git+https://github.com/mridang/serverless-highcharts.git"
   },
-  "devDependencies": {
-    "jest": "^23.6.0",
-    "prettier": "^1.15.3",
-    "serverless-offline": "^3.31.3"
+  "author": "Mridang Agarwalla <mridang@nosto.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mridang/serverless-highcharts/issues"
   },
+  "homepage": "https://github.com/mridang/serverless-highcharts",
   "dependencies": {
     "async": "^2.6.0",
     "highcharts-export-server": "^2.0.16",
     "object-assign-deep": "^0.3.1",
     "serverless": "^1.35.1"
   },
-  "scripts": {
-    "build": "prettier --config .prettierrc --write lib/** handler.js",
-    "serve": "serverless offline start",
-    "test": "jest"
-  },
-  "author": "Mridang Agarwalla <mridang@nosto.com>",
-  "license": "MIT"
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "serverless-offline": "^3.31.3"
+  }
 }

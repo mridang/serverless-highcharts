@@ -18,4 +18,7 @@ functions:
       - http:
           path: /
           method: ANY
-          cors: true
+          cors:
+            origin: '*'
+            maxAge: 86400
+            allowCredentials: true

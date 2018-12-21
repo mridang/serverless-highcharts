@@ -13,6 +13,8 @@ module.exports.graph = async (event, context) => {
     console.error(err);
     return {
       headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials" : true,
         "Content-Type": "text/plain"
       },
       statusCode: 400,
@@ -28,6 +30,8 @@ module.exports.graph = async (event, context) => {
 
     return {
       headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials" : true,
         "Content-Type": "image/png"
       },
       statusCode: 200,
@@ -38,6 +42,8 @@ module.exports.graph = async (event, context) => {
     console.error(err);
     return {
       headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials" : true,
         "Content-Type": "text/plain"
       },
       statusCode: 500,
