@@ -1,7 +1,14 @@
 const charter = require("./lib/charts");
 const exporter = require("highcharts-export-server");
+const pjs = require('phantomjs-prebuilt');
+var fs = require('fs');
+
+// Since the PhantomJS binary is deployed as layer, we need monkey-patch the
+// exported location of the binary to point to our bundled one.
+pjs.path = process.env.IS_OFFLINE !== 'true' ? '/opt/phantomjs' : pjs.path;
 
 module.exports.graph = async (event, context) => {
+
   try {
     var data;
     if (event.httpMethod === "GET") {
