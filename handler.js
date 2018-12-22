@@ -1,14 +1,13 @@
 const charter = require("./lib/charts");
 const exporter = require("highcharts-export-server");
-const pjs = require('phantomjs-prebuilt');
-var fs = require('fs');
+const pjs = require("phantomjs-prebuilt");
+var fs = require("fs");
 
 // Since the PhantomJS binary is deployed as layer, we need monkey-patch the
 // exported location of the binary to point to our bundled one.
-pjs.path = process.env.IS_OFFLINE !== 'true' ? '/opt/phantomjs' : pjs.path;
+pjs.path = process.env.IS_OFFLINE !== "true" ? "/opt/phantomjs" : pjs.path;
 
 module.exports.graph = async (event, context) => {
-
   try {
     var data;
     if (event.httpMethod === "GET") {
@@ -21,7 +20,7 @@ module.exports.graph = async (event, context) => {
     return {
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials" : true,
+        "Access-Control-Allow-Credentials": true,
         "Content-Type": "text/plain"
       },
       statusCode: 400,
@@ -38,7 +37,7 @@ module.exports.graph = async (event, context) => {
     return {
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials" : true,
+        "Access-Control-Allow-Credentials": true,
         "Content-Type": "image/png"
       },
       statusCode: 200,
@@ -50,7 +49,7 @@ module.exports.graph = async (event, context) => {
     return {
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials" : true,
+        "Access-Control-Allow-Credentials": true,
         "Content-Type": "text/plain"
       },
       statusCode: 500,
