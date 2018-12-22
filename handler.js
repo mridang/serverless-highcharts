@@ -8,6 +8,7 @@ var fs = require("fs");
 pjs.path = process.env.IS_OFFLINE !== "true" ? "/opt/phantomjs" : pjs.path;
 
 module.exports.graph = async (event, context) => {
+  console.log(event);
   try {
     var data;
     if (event.httpMethod === "GET") {

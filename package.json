@@ -31,6 +31,7 @@
   "devDependencies": {
     "jest": "^23.6.0",
     "prettier": "^1.15.3",
+    "serverless-apigwy-binary": "^1.0.0",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-offline": "^3.31.3"
   }
