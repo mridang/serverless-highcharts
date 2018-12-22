@@ -7,6 +7,8 @@ var fs = require("fs");
 // exported location of the binary to point to our bundled one.
 pjs.path = process.env.IS_OFFLINE !== "true" ? "/opt/phantomjs" : pjs.path;
 
+exporter.initPool({ maxWorkers: 1, listenToProcessExits: true });
+
 module.exports.graph = async (event, context) => {
   console.log(event);
   try {
@@ -31,9 +33,7 @@ module.exports.graph = async (event, context) => {
   }
 
   try {
-    exporter.initPool({ maxWorkers: 1 });
     const chart = await charter.createChart(exporter, data);
-    exporter.killPool();
 
     return {
       headers: {
