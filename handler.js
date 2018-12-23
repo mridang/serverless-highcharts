@@ -10,7 +10,6 @@ pjs.path = process.env.IS_OFFLINE !== "true" ? "/opt/phantomjs" : pjs.path;
 exporter.initPool({ maxWorkers: 1, listenToProcessExits: true });
 
 module.exports.graph = async (event, context) => {
-  console.log(event);
   try {
     var data;
     if (event.httpMethod === "GET") {
