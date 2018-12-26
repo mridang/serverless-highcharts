@@ -26,11 +26,11 @@ Run `yarn install`to fetch all  the dependencies and once done, run `yarn serve`
 
 ## Deployment
 
-Polyfill allows deployment to AWS Lambda with a single command. Run `sls deploy --stage [STAGE]` to deploy the function. 
+Highcharts allows deployment to AWS Lambda with a single command. Run `sls deploy --stage [STAGE]` to deploy the function. 
 
 **Note:** If the `--stage` parameter is not specified, Serverless will default to `dev`.
 
-**Note:** The `NODE_ENV` variable is always forced to be `production` irrespective of whether the service is running offline or in the cloud. This is so that the Polyfill service will run in production mode. 
+**Note:** The `NODE_ENV` variable is always forced to be `production` irrespective of whether the service is running offline or in the cloud. This is so that the Highcharts service will run in production mode. 
 
 This will trigger output that looks something like:
 
@@ -55,7 +55,7 @@ api keys:
 endpoints:
   GET - https://xxxxxxxxxx.execute-api.us-west-2.amazonaws.com/production/polyfill
 functions:
-  polyfill: highcharts-production-graph
+  graph: highcharts-production-graph
 ```
 
 ## Usage
@@ -276,7 +276,7 @@ EOF
 
 ## Linting
 
-Polyfill uses Prettier to format and lint it's sources. Run `yarn build` to prettify all the sources.
+This service uses Prettier to format and lint it's sources. Run `yarn build` to prettify all the sources.
 
 ## Testing
 
