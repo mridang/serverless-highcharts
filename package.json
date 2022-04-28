@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/mridang/serverless-highcharts",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.4",
     "highcharts-export-server": "^2.1.0",
     "object-assign-deep": "^0.3.1",
     "serverless": "^1.35.1"
